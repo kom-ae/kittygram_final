@@ -45,13 +45,13 @@ jobs:
       with:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
-        message: 
-          - Push от (github.actor).
-          - ${{ github.event.commits[0].message) }}. 
-          - https://github.com/${{ github.repository }}/commit/${{github.sha}}
-          - (job.status)
-          - Деплой успешно выполнен!
-
+        message: |
+          ${{ github.actor }} created commit:
+            Commit message: ${{ github.event.commits[0].message }}
+            ${{ job.status }}
+            Repository: ${{ github.repository }}
+            
+            See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
 
   frontend_tests:
     runs-on: ubuntu-latest
