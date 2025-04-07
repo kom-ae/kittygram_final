@@ -116,10 +116,10 @@ export const CardPage = ({ data, setData, extraClass = "" }) => {
       <p
         className={`text text_type_h2-5 text_color_primary mt-35 mb-10 ${styles.name}`}
       >
-        {data.name}
+        Кличка: {data.name}
       </p>
       <p className={`text text_type_h3 text_color_secondary ${styles.date}`}>
-        {data.birth_year}
+        Возраст: {data.age}
       </p>
       <div
         className={styles.cat_color_box}

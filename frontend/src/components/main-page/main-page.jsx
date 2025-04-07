@@ -55,7 +55,7 @@ export const MainPage = ({ queryPage, setQueryPage, extraClass = "" }) => {
               key={index}
               img={item.image_url}
               name={item.name}
-              date={item.birth_year}
+              date={item.age}
               color={item.color}
             />
           );

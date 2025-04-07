@@ -35,12 +35,12 @@ export const MainCard = ({
           <p
             className={`text text_type_h3 text_color_primary mt-8 mb-3 ${styles.name}`}
           >
-            {name}
+            Кличка: {name}
           </p>
           <p
             className={`text text_type_medium-20 text_color_secondary mb-8 ${styles.date}`}
           >
-            {date}
+            Возраст: {date}
           </p>
         </div>
         <div
