@@ -70,6 +70,19 @@ jobs:
       run: |
         cd frontend/
         npm run test
+    - name: Send message
+      uses: appleboy/telegram-action@master
+      with:
+        to: ${{ secrets.TELEGRAM_TO }}
+        token: ${{ secrets.TELEGRAM_TOKEN }}
+        message: |
+          Repository: ${{ github.repository }}
+          Branch: ${{ github.ref_name }}
+          ${{ github.actor }} created commit:
+          Commit message: ${{ github.event.commits[0].message }}
+          Job ${{ github.job }} status: ${{ job.status }}
+            
+          See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
 
   build_backend_and_push_to_docker_hub:
     name: Push Docker image to DockerHub

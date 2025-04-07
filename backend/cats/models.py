@@ -1,6 +1,8 @@
 from django.contrib.auth import get_user_model
 from django.db import models
 
+
+
 from constants import (ACHIEVEMENT_MAX_LENGTH, CAT_COLOR_MAX_LENGTH,
                        CAT_NAME_MAX_LENGTH)
 
