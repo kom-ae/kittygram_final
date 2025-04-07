@@ -46,12 +46,13 @@ jobs:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
         message: |
+          Repository: ${{ github.repository }}
+          Branch: ${{ github.ref_name }}
           ${{ github.actor }} created commit:
-            Commit message: ${{ github.event.commits[0].message }}
-            ${{ job.status }}
-            Repository: ${{ github.repository }}
+          Commit message: ${{ github.event.commits[0].message }}
+          Job ${{ github.job }} status: ${{ job.status }}
             
-            See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
+          See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
 
   frontend_tests:
     runs-on: ubuntu-latest
